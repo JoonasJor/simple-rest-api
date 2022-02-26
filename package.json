@@ -1,0 +1,30 @@
+{
+  "name": "nortal-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobtheburgerflipper/nortal-assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobtheburgerflipper/nortal-assignment/issues"
+  },
+  "homepage": "https://github.com/bobtheburgerflipper/nortal-assignment#readme",
+  "dependencies": {
+    "ajv": "^8.10.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "passport": "^0.5.2",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^4.0.0",
+    "tedious": "^14.3.0",
+    "uuid": "^8.3.2"
+  }
+}
