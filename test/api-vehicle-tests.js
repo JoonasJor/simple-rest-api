@@ -14,7 +14,8 @@ const vehicleInfoSchema = require('../schemas/vehicle.schema.json')
 
 
 describe('Vehicle tests', function () {
-    var vehicleId = -1
+    //var token = ""
+    var vehicleId = 0
 
     before(async function() {
         server.start()
@@ -44,7 +45,7 @@ describe('Vehicle tests', function () {
                 done()
             })
         })
-    }).timeout(10000)
+    })
 
     describe('Get single vehicle - GET /vehicle/:id', function() {
         it("should return vehicle data", function(done) {
@@ -58,7 +59,7 @@ describe('Vehicle tests', function () {
                 done()
             })
         })
-    }).timeout(10000)
+    })
 
     //POST 
     //
@@ -219,7 +220,7 @@ describe('Vehicle tests', function () {
                 done()
             })
         })
-        it("should contain added item data", function(done){
+        it("should contain updated item data", function(done){
         chai.request(serverAddress)
             .get(`/vehicles/${vehicleId}`)
             .end(function (err, res) {

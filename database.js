@@ -1,7 +1,7 @@
 const { Connection, Request } = require("tedious")
-
-// Create connection to database
 const secrets = require('./secrets.json')
+
+// database config
 const config = {
     authentication: {
     options: {
@@ -41,7 +41,7 @@ function disconnectDatabase(){
     connection.close();
 }
 
-async function queryDatabase(r)  {
+function queryDatabase(r)  {
     return new Promise((resolve, reject) => {
         console.log(r)
 
@@ -66,4 +66,4 @@ async function queryDatabase(r)  {
     })
 }
 
-module.exports = {queryDatabase,connectDatabase, disconnectDatabase}
+module.exports = { queryDatabase, connectDatabase, disconnectDatabase }

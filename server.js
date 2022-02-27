@@ -17,7 +17,6 @@ app.use("/vehicles", vehicles)
 
 app.use("/users", users)
 
-
 let serverInstance = null
 
 function start(){
@@ -30,7 +29,4 @@ function close(){
     serverInstance.close()
 }
 
-module.exports = {
-    start,
-    close
-}
+module.exports = { start, close }
