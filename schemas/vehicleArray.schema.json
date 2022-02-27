@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/vehicleArray.json",
+    "type": "array",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": [],
+    "examples": [
+        [
+            {
+                "id": 1,
+                "brand": "Lada",
+                "model": "2015",
+                "licencePlate": "DGE-123"
+            }
+        ]
+    ],
+    "items": {
+        "$id": "#/items",
+        "anyOf": [
+            {
+                "$id": "#/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "id": 1,
+                        "brand": "Lada",
+                        "model": "2015",
+                        "licencePlate": "DGE-123"
+                    }
+                ],
+                "required": [
+                    "id",
+                    "brand",
+                    "model",
+                    "licencePlate"
+                ],
+                "properties": {
+                    "id": {
+                        "$id": "#/items/anyOf/0/properties/id",
+                        "type": "integer",
+                        "title": "The id schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            1
+                        ]
+                    },
+                    "brand": {
+                        "$id": "#/items/anyOf/0/properties/brand",
+                        "type": "string",
+                        "title": "The brand schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Lada"
+                        ]
+                    },
+                    "model": {
+                        "$id": "#/items/anyOf/0/properties/model",
+                        "type": "string",
+                        "title": "The model schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "2015"
+                        ]
+                    },
+                    "licencePlate": {
+                        "$id": "#/items/anyOf/0/properties/licencePlate",
+                        "type": "string",
+                        "title": "The licencePlate schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "DGE-123"
+                        ]
+                    }
+                },
+                "additionalProperties": true
+            }
+        ]
+    }
+}

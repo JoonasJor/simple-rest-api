@@ -49,5 +49,5 @@
             ]
         }
     },
-    "additionalProperties": false
+    "additionalProperties": true
 }
