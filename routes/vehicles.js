@@ -49,11 +49,23 @@ passport.use(new JwtStrategy(jwtValidationOptions, function(jwt_payload, done) {
 
 // jwt auth not working currently
 router.get('/'/*, passport.authenticate("jwt", {session: false})*/, (req, res) => {
-    db.queryDatabase(`EXEC getVehicles @id = ${-1}`)
-    .then((response) => {
-        let parsedResponse=JSON.parse(response);
-        res.json(parsedResponse)
-    })
+    if(Object.keys(req.query).length == 0){
+        db.queryDatabase(`EXEC getVehicles @id = ${-1}`)
+        .then((response) => {
+            let parsedResponse=JSON.parse(response);
+            res.json(parsedResponse)
+        })
+    }
+    else {
+        db.queryDatabase(`EXEC queryVehicles
+                        @brand = '${req.query.brand}', 
+                        @model = '${req.query.model}', 
+                        @licencePlate = '${req.query.licencePlate}'`)
+        .then((response) => {
+            let parsedResponse=JSON.parse(response);
+            res.json(parsedResponse)
+        })
+    }
 })
 
 router.get('/:id', (req, res) => {

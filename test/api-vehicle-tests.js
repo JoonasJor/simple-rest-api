@@ -47,6 +47,20 @@ describe('Vehicle tests', function () {
         })
     })
 
+    describe('Query vehicles - GET /vehicles?', function() {
+        it("should return queried vehicle data", function(done) {
+        chai.request(serverAddress)
+            .get('/vehicles?brand=Saab')
+            .end(function (err, res) {
+                expect(err).to.be.null 
+                expect(res.statusCode).to.equal(200)
+                expect(res.body).to.be.jsonSchema(vehicleInfoArraySchema)
+                
+                done()
+            })
+        })
+    })
+
     describe('Get single vehicle - GET /vehicle/:id', function() {
         it("should return vehicle data", function(done) {
         chai.request(serverAddress)
