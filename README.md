@@ -1,4 +1,4 @@
-# nortal-assignment
+# simple-rest-api
 
 Rest-api made with Node.js and Express + some tests with Mocha
 
